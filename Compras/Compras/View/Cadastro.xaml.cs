@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace Compras.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Cadastro : ContentView
+    public partial class Cadastro : ContentPage
     {
         public Cadastro()
         {
