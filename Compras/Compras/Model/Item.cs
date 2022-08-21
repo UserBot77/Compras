@@ -10,9 +10,9 @@ namespace Compras.Models
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public string Produto { get; set; }
-        public int Quantidade { get; set; }
+        public double Quantidade { get; set; }
         public double? PreçoUnitário { get; set; }
         public string Descrição { get; set; }
-        public decimal? Total { get; set; }
+        public double? Total { get => Quantidade * PreçoUnitário; }
     }
 }

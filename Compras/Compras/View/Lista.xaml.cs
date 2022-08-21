@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace Compras.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Lista : ContentView
+    public partial class Lista : ContentPage
     {
         public Lista()
         {
