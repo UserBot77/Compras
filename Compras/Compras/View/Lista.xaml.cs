@@ -34,6 +34,8 @@ namespace Compras.View
 
             if(Confirmacao)
             {
+                await App.Database.Delete(MenuProduto.Id);
+                Lista_Items.Remove(MenuProduto);
             }
         }
     }
