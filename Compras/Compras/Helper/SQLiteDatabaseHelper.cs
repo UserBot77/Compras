@@ -17,18 +17,22 @@ namespace Compras.Helper
 
             _db.CreateTableAsync<Item>().Wait();
         }
+
         public Task<List<Item>> GetAllRows()
         {
             return _db.Table<Item>().OrderByDescending(i => i.Id).ToListAsync();
         }
+
         public Task<Item> GetById(int id)
         {
             return _db.Table<Item>().FirstAsync(i => i.Id == id);
         }
+
         public Task<int> Insert(Item NovoItem)
         {
             return _db.InsertAsync(NovoItem);
         }
+
         public Task<List<Item>> Update(Item NovoItem)
         {
             string sql = "UPDATE Item SET PRODUTO=?, QUANTIDADE=?, PRECOUNITARIO=?, DESCRICAO=? TOTAL=?" +
@@ -42,10 +46,12 @@ namespace Compras.Helper
                 NovoItem.Total,
                 NovoItem.Id);    
         }
+
         public Task<int> Delete(int id)
         {
             return _db.Table<Item>().DeleteAsync(i => i.Id == id);
         }
+
         public Task<List<Item>> Search(string search)
         {
             string sql = "SELECT * FROM Item WHERE Descricao LIKE %?%";

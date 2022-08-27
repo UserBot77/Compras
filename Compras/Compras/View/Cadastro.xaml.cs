@@ -23,8 +23,8 @@ namespace Compras.View
             Item I = new Item();
             I.Produto = txt_Produto.Text;
             I.Quantidade = Convert.ToDouble(txt_Qntd.Text);
-            I.PreçoUnitário = Convert.ToDouble(txt_PrecoUnitario.Text);
-            I.Descrição = txt_Descricao.Text;
+            I.PrecoUnitario = Convert.ToDouble(txt_PrecoUnitario.Text);
+            I.Descricao = txt_Descricao.Text;
 
             await Navigation.PushAsync(new Lista());
         }

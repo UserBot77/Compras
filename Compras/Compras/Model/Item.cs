@@ -10,8 +10,8 @@ namespace Compras.Models
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public string Produto { get; set; }
-        public double Quantidade { get; set; }
         public double? PrecoUnitario { get; set; }
+        public double Quantidade { get; set; }
         public string Descricao { get; set; }
         public double? Total { get => Quantidade * PrecoUnitario; }
     }
