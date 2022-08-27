@@ -11,8 +11,9 @@
             <Label Text="Cadastro:" TextColor="Black" FontSize="27" Margin="5, 10, 10, 0" />
 
             <Entry x:Name="txt_Produto" Placeholder="Produto" Margin="5, 0, 5, 0" />
-            <Entry x:Name="txt_PrecoUnitario" Placeholder="Preço Unitário" Margin="5, 0, 5, 0" />
-            <Entry x:Name="txt_Qntd" Placeholder="Quantidade" Margin="5, 0, 5, 0" />
+            <Entry x:Name="txt_PrecoUnitario" Placeholder="Preço Unitário" Margin="5, 0, 5, 0" Keyboard="Numeric"
+                   />
+            <Entry x:Name="txt_Qntd" Placeholder="Quantidade" Margin="5, 0, 5, 0" Keyboard="Numeric" />
             <Entry x:Name="txt_Descricao" Placeholder="Descrição" Margin="5, 0, 5, 0" />
 
             <Button Text="" Clicked="Button_Clicked" />
