@@ -66,7 +66,7 @@ namespace Compras.View
             }
         }
 
-        private void lista_items_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private async void lista_items_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             Item item_selecionado = (Item)e.SelectedItem;
 
@@ -74,6 +74,8 @@ namespace Compras.View
             {
                 BindingContext = item_selecionado
             });
+
+            await Navigation.PushAsync(new ExibirItem());
         }
     }
 }
