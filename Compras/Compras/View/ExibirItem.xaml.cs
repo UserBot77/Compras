@@ -18,11 +18,6 @@ namespace Compras.View
             InitializeComponent();
         }
 
-        public double? GetTotal()
-        {
-            return total;
-        }
-
         private void Button_Clicked(object sender, EventArgs e, double? total)
         {
             Item i = new Item
@@ -31,7 +26,6 @@ namespace Compras.View
                 Produto = txt_produto.Text,
                 PrecoUnitario = Convert.ToDouble(txt_preco.Text),
                 Quantidade = Convert.ToDouble(txt_qntd.Text),
-                total = Convert.ToDouble(lbl_valortotal.Text),
                 Descricao = txt_descricao.Text,
             };
         }

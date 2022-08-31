@@ -3,11 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Compras.View.Lista">
     <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Novo Item" Order="Primary" Clicked="ToolbarItem_Clicked" />
         <ToolbarItem Text="Atualizar" IconImageSource="refresh24" Order="Primary" />
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
         <StackLayout>
+            <SearchBar Placeholder="Buscar" x:Name="SearchBar" TextChanged="SearchBar_TextChanged" />
             <RefreshView x:Name="atualizando" IsRefreshing="True" Refreshing="atualizando_Refreshing">
                 <ListView x:Name="lista_items" ItemSelected="lista_items_ItemSelected">
                     <ListView.Header>

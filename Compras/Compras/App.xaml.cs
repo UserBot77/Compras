@@ -28,7 +28,7 @@ namespace Compras
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Cadastro());
+            MainPage = new NavigationPage(new Lista());
         }
 
         protected override void OnStart()

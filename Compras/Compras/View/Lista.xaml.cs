@@ -77,5 +77,29 @@ namespace Compras.View
 
             await Navigation.PushAsync(new ExibirItem());
         }
+
+        private async void ToolbarItem_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Cadastro());
+        }
+
+        private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string busca = e.NewTextValue;
+
+            System.Threading.Tasks.Task.Run(async () =>
+            {
+                List<Item> temp = await App.Database.Search(busca);
+
+                I.Clear();
+
+                foreach (Item item in temp)
+                {
+                    I.Add(item);
+                }
+
+                atualizando.IsRefreshing = false;
+            });
+        }
     }
 }
