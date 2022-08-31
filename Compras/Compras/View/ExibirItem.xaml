@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Compras.View.ExibirItem">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Margin="10, 0, 10, 0">
             <Label Text="Código:" />
             <Label x:Name="lbl_id"  Text="{Binding Id}" />
 
@@ -11,18 +11,18 @@
             <Entry x:Name="txt_produto" Text="{Binding Produto}" />
 
             <Label Text="Preço" />
-            <Entry x:Name="txt_preco" Text="{Binding Preco}" />
-           
+            <Entry x:Name="txt_preco" Text="{Binding Preco}" Keyboard="Numeric" />
+
             <Label Text="Quantidade" />
-            <Entry x:Name="txt_qntd" Text="{Binding Quantidade}" />
+            <Entry x:Name="txt_qntd" Text="{Binding Quantidade}" Keyboard="Numeric" />
 
             <Label Text="Descrição" />
             <Entry x:Name="txt_descricao" Text="{Binding Descricao}" />
 
             <Label Text="Total:" />
-            <Label x:Name="lbl_valortotal" Text="{Binding ValorTotal}" />
+            <Label x:Name="lbl_valortotal" Text="{Binding Total}" />
 
-            <Button Text="Salvar" Clicked="Button_Clicked" />
+            <Button Text="Salvar" Clicked="Button_Clicked_1" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

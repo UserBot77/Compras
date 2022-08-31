@@ -14,7 +14,7 @@
                 <ListView x:Name="lista_items" ItemSelected="lista_items_ItemSelected">
                     <ListView.Header>
                         <Grid RowDefinitions="Auto" ColumnDefinitions="*, *, *">
-                            <Label Text="Produto" Grid.Row="0" Grid.Column="0" />
+                            <Label Text="Produto" Grid.Row="0" Grid.Column="0" Margin="10, 0, 0, 0" />
                             <Label Text="Preço" Grid.Row="0" Grid.Column="1" />
                             <Label Text="Quantidade" Grid.Row="0" Grid.Column="2" />
                         </Grid>
@@ -23,7 +23,8 @@
                         <DataTemplate>
                             <ViewCell>
                                 <Grid RowDefinitions="Auto" ColumnDefinitions="*, *, *">
-                                    <Label Grid.Row="0" Grid.Column="0" Text="{Binding Produto}" />
+                                    <Label Grid.Row="0" Grid.Column="0" Text="{Binding Produto}" 
+                                           Margin="10, 0, 0, 0" />
                                     <Label Grid.Row="0" Grid.Column="1" Text="{Binding Preco}" />
                                     <Label Grid.Row="0" Grid.Column="2" Text="{Binding Quantidade}" />
                                 </Grid>
@@ -32,6 +33,8 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </RefreshView>
+            <Label Text="Total:" Margin="10, 0, 0, 0" />
+            <Label Text="{Binding Total}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

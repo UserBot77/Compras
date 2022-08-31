@@ -24,26 +24,19 @@ namespace Compras.View
 
         private void atualizando_Refreshing(object sender, EventArgs e)
         {
-            try
+            System.Threading.Tasks.Task.Run(async () =>
             {
-                System.Threading.Tasks.Task.Run(async () =>
+                List<Item> temp = await App.Database.GetAllRows();
+
+                I.Clear();
+
+                foreach (Item item in temp)
                 {
-                    List<Item> temp = await App.Database.GetAllRows();
+                    I.Add(item);
+                }
 
-                    I.Clear();
-
-                    foreach (Item item in temp)
-                    {
-                        I.Add(item);
-                    }
-
-                    atualizando.IsRefreshing = false;
-                });
-            }
-            catch (Exception ex)
-            {
-                DisplayAlert("Erro", ex.Message, "Ok");
-            }
+                atualizando.IsRefreshing = false;
+            });
         }
 
         protected override void OnAppearing()

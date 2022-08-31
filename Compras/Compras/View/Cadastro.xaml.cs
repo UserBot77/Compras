@@ -26,6 +26,8 @@ namespace Compras.View
             I.PrecoUnitario = Convert.ToDouble(txt_PrecoUnitario.Text);
             I.Descricao = txt_Descricao.Text;
 
+            await App.Database.Insert(I);
+
             await Navigation.PushAsync(new Lista());
         }
     }

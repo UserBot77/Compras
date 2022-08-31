@@ -18,7 +18,7 @@ namespace Compras.View
             InitializeComponent();
         }
 
-        private void Button_Clicked(object sender, EventArgs e, double? total)
+        private async void Button_Clicked_1(object sender, EventArgs e)
         {
             Item i = new Item
             {
@@ -28,6 +28,10 @@ namespace Compras.View
                 Quantidade = Convert.ToDouble(txt_qntd.Text),
                 Descricao = txt_descricao.Text,
             };
+
+            await App.Database.Update(i);
+
+            await Navigation.PushAsync(new Lista());
         }
     }
 }
